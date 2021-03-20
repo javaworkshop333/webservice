@@ -3,8 +3,7 @@ package com.tutorial.demo;
 public class Input {
 	public int param1;
 	public int param2;
-	
-/*
+ 	/*
  {
  	"param1":10,
  	"param2":20

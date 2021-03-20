@@ -22,9 +22,9 @@ import io.swagger.annotations.*;
 
 @RestController
 public class RestCalculator {
-	
+	Logger log=Logger.getLogger("RestCalculator");
 	// http://localhost/areaOfrect?length=10&breadth=5
-	@RequestMapping(value = "/areaOfrect", method = RequestMethod.GET)
+	@RequestMapping(value = "/areaOfrect", method = RequestMethod.POST)
 	public int areaOfrect(@RequestParam("length") int a, @RequestParam("breadth") int b) {
 		int area=a * b;
 		return area;
@@ -56,7 +56,7 @@ public class RestCalculator {
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public int mulCalculator(@RequestBody Input in) {
 		// "Input" parameter is json compliant java program
-		int mul=in.param1 * in.param2;
+		int mul=in.param1 * in.param2  ;
 		return mul;
 	}
 	
@@ -71,4 +71,19 @@ public class RestCalculator {
 		res.setDiv(param1 / param2);
 		return res;
 	}
+	
+	
+	@RequestMapping(value = "/areaService", method = RequestMethod.POST, 
+			consumes = MediaType.APPLICATION_JSON_VALUE,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	public AreaOutput areaService(@RequestBody MathInput mi) {
+		AreaOutput result=new AreaOutput();
+		result.areaOfCircle =(int) 3.142 * mi.radius * mi.radius;
+		result.areaOfRectangle = mi.length * mi.breadth;
+		result.areaOfSquare = mi.sides * mi.sides;
+		return result;
+	}
+	
+	
+	
 }
