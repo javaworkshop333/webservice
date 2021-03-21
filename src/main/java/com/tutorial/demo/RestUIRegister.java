@@ -46,7 +46,7 @@ public class RestUIRegister {
 			e.printStackTrace(); 
 			return "redirect:"+"http://localhost/regerror.html";
 		}
-		return "redirect:"+"http://localhost/thankyou.html";
+		return  "thankyou.jsp";
 	}
 	
 }

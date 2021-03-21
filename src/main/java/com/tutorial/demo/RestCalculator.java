@@ -1,8 +1,8 @@
 package com.tutorial.demo;
 
 import java.util.Map;
+import java.util.logging.Logger;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.google.common.net.HttpHeaders;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.*;
 
 @RestController
 public class RestCalculator {
