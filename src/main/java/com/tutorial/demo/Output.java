@@ -5,6 +5,7 @@ public class Output {
 	public int sub;
 	public int mul;
 	public int div;
+	// trainer changes
 	/*
 	{
 		"sum":12,
