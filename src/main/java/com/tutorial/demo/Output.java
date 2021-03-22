@@ -6,6 +6,7 @@ public class Output {
 	public int mul;
 	public int div;
 	// trainer changes
+	// trainer change conflict
 	/*
 	{
 		"sum":12,
