@@ -18,17 +18,31 @@ public class CartController {
 	@Autowired
 	CartService cd;
 	//http://localhost/add2Cart?product=iphone
-	@RequestMapping(value = "/add2Cart", method = RequestMethod.GET
-			, produces=MediaType.TEXT_HTML_VALUE)
-	@ResponseBody
-	public String add2Cart(HttpServletResponse  response,
-			@RequestParam("product") String product,
-			@RequestParam("userid") String userid) {
-		String allItemName=cd.addItems(userid,product);
-		String cartitems=allItemName;
-		System.out.println(cartitems);
-		response.setContentType("text/plain");
-		response.setCharacterEncoding("UTF-8");
-		return cartitems;
-	}
+		@RequestMapping(value = "/add2Cart", method = RequestMethod.GET
+				, produces=MediaType.TEXT_HTML_VALUE)
+		@ResponseBody
+		public String add2Cart(HttpServletResponse  response,
+				@RequestParam("product") String product,
+				@RequestParam("userid") String userid) {
+			String allItemName=cd.addItems(userid,product);
+			String cartitems=allItemName;
+			System.out.println(cartitems);
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			return cartitems;
+		}
+		
+		//http://localhost:5050/showCart=mike
+		@RequestMapping(value = "/showCart", method = RequestMethod.GET
+				, produces=MediaType.TEXT_HTML_VALUE)
+		@ResponseBody
+		public String showCart(HttpServletResponse  response,
+				@RequestParam("userid") String userid) {
+			String allItemName=cd.showItems(userid);
+			System.out.println(allItemName);
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			return allItemName;
+		}
+		
 }

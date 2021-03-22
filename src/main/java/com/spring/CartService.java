@@ -26,4 +26,9 @@ public class CartService {
 		cr.save(ce);
 		return cartItems.toString();
 	}
+	
+	public String showItems(String uid) {
+		ArrayList<CartEntity> allItems=cr.findByUid(uid);
+		return allItems.toString();
+	}
 }

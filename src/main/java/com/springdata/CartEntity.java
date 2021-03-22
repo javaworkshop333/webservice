@@ -30,7 +30,7 @@ public class CartEntity {
 	}
 	@Override
 	public String toString() {
-		return "LoginEntity [uid=" + uid + ", products=" + products + "]";
+		return "CartEntity [products=" + products + "]";
 	}
 	public void setUid(String uid) {
 		this.uid = uid;
