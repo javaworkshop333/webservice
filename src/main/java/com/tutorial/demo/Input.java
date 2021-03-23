@@ -9,6 +9,7 @@ public class Input {
  	"param2":20
  }
  */
+	asdadasdas
 	// omid changes
 	
 	public int getParam1() {
