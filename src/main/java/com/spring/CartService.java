@@ -29,6 +29,8 @@ public class CartService {
 	
 	public String showItems(String uid) {
 		ArrayList<CartEntity> allItems=cr.findByUid(uid);
+		System.out.println("Testing");
 		return allItems.toString();
+
 	}
 }
